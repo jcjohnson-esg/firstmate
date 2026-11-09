@@ -1,0 +1,31 @@
+== self (pid=196172)
+  target /proc : rc=0 comm=[/usr/bin/bash] args=[bash proc-parity.sh /c/Users/jcjohnson/.no-mistakes/worktrees/13c4a286458e/01M6YXQ9HBR94YHNX2MS42RS5B /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/base /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX] ppid=[196166] ms=2
+  target ps    : rc=0 comm=[/usr/bin/bash] args=[bash proc-parity.sh /c/Users/jcjohnson/.no-mistakes/worktrees/13c4a286458e/01M6YXQ9HBR94YHNX2MS42RS5B /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/base /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX] ppid=[196166] ms=1695
+  base         : rc=0 comm=[/usr/bin/bash] args=[bash proc-parity.sh /c/Users/jcjohnson/.no-mistakes/worktrees/13c4a286458e/01M6YXQ9HBR94YHNX2MS42RS5B /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/base /c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX] ppid=[196166] ms=1883
+  PARITY OK
+== sleep-multispace-args (pid=196179)
+  target /proc : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : a b lead tab in trail] ppid=[196172] ms=3
+  target ps    : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : a b lead tab in trail] ppid=[196172] ms=1740
+  base         : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : a b lead tab in trail] ppid=[196172] ms=2325
+  PARITY OK
+== exe-path-with-spaces (pid=196180)
+  target /proc : rc=0 comm=[/tmp/fmid.mSu2XX/dir with space/sl eep] args=[/c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/dir with space/sl eep 120] ppid=[196172] ms=3
+  target ps    : rc=0 comm=[/tmp/fmid.mSu2XX/dir with space/sl eep] args=[/c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/dir with space/sl eep 120] ppid=[196172] ms=1626
+  base         : rc=0 comm=[/tmp/fmid.mSu2XX/dir with space/sl eep] args=[/c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/dir with space/sl eep 120] ppid=[196172] ms=1855
+  PARITY OK
+== argv-with-newline (pid=196181)
+  target /proc : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : first line] ppid=[196172] ms=4
+  target ps    : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : first line] ppid=[196172] ms=2216
+  base         : rc=0 comm=[/usr/bin/bash] args=[bash -c sleep 120; : first line] ppid=[196172] ms=1868
+  PARITY OK
+== native-windows-ping (pid=196183)
+  target /proc : rc=0 comm=[/c/WINDOWS/system32/ping] args=[C:\WINDOWS\system32\ping.exe -n 120 127.0.0.1] ppid=[196172] ms=1
+  target ps    : rc=0 comm=[/c/WINDOWS/system32/ping] args=[C:\WINDOWS\system32\ping.exe -n 120 127.0.0.1] ppid=[196172] ms=1604
+  base         : rc=0 comm=[/c/WINDOWS/system32/ping] args=[C:\WINDOWS\system32\ping.exe -n 120 127.0.0.1] ppid=[196172] ms=1942
+  PARITY OK
+== gone-pid (pid=999999)
+  target /proc : rc=1 comm=[] args=[] ppid=[] ms=609
+  target ps    : rc=1 comm=[] args=[] ppid=[] ms=579
+  base         : rc=1 comm=[] args=[] ppid=[] ms=749
+  PARITY OK
+overall: PASS

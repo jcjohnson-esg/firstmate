@@ -1,0 +1,26 @@
+== claude-run
+ target: rc=0 pids=[197488 197487] outermost=[197487] walk_ms=902
+   matched: 197488:/tmp/fmid.mSu2XX/h/claude 197487:/tmp/fmid.mSu2XX/h/claude
+ base  : rc=0 pids=[197540 197538] outermost=[197538] walk_ms=8771
+   matched: 197540:/tmp/fmid.mSu2XX/h/claude 197538:/tmp/fmid.mSu2XX/h/claude
+ SAME VERDICT: rc 0, matched [ /tmp/fmid.mSu2XX/h/claude /tmp/fmid.mSu2XX/h/claude]
+== claude-gap
+ target: rc=0 pids=[197920] outermost=[197920] walk_ms=953
+   matched: 197920:/tmp/fmid.mSu2XX/h/claude
+ base  : rc=0 pids=[197970] outermost=[197970] walk_ms=7657
+   matched: 197970:/tmp/fmid.mSu2XX/h/claude
+ SAME VERDICT: rc 0, matched [ /tmp/fmid.mSu2XX/h/claude]
+== codex-path
+ target: rc=0 pids=[198265] outermost=[198265] walk_ms=476
+   matched: 198265:/tmp/fmid.mSu2XX/h/codex/bash
+ base  : rc=0 pids=[198296] outermost=[198296] walk_ms=4464
+   matched: 198296:/tmp/fmid.mSu2XX/h/codex/bash
+ SAME VERDICT: rc 0, matched [ /tmp/fmid.mSu2XX/h/codex/bash]
+== no-harness
+/c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/walker.sh: line 4: /proc/win:25152/exename: No such file or directory
+/c/Users/JCJOHN~1/AppData/Local/Temp/fmid.mSu2XX/walker.sh: line 4: /proc/win:25152/exename: No such file or directory
+ target: rc=0 pids=[win:25152] outermost=[win:25152] walk_ms=2979
+   matched: win:25152:
+ base  : rc=0 pids=[win:25152] outermost=[win:25152] walk_ms=15146
+   matched: win:25152:
+ SAME VERDICT: rc 0, matched [ win]

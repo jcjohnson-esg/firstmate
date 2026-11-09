@@ -1,0 +1,3 @@
+ok - live owner with unreadable identity returns a successful verdict
+ok - partial identity reads block reclaim; successfully empty args remain readable
+Terminated                 env -u CLAUDE_CODE_SESSION_ID -u CLAUDE_PID FM_STATE_OVERRIDE="$dir/state" "$dir/named/claude" -c 'bash "$1/bin/fm-lock.sh"; rc=$?; exit "$rc"' _ "$ROOT" > "$dir/out" 2>&1
