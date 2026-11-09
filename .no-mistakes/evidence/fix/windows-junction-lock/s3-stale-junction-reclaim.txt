@@ -1,0 +1,7 @@
+== S3: holder acquires, is SIGKILLed while holding; a new process must reclaim the stale junction
+holder pid 92635 acquired; lock -> /c/Users/jcjohnson/AppData/Local/Temp/tmp.sIPa5Fj2Mb/state/.contend.lock.owner.CTVrj5
+/usr/bin/bash: line 9: 92635 Killed                     env FM_STATE_OVERRIDE="$S" bash -c '. "$1"; fm_lock_try_create "$2/.contend.lock" || exit 7; echo "holder pid ${BASHPID} acquired; lock -> $(readlink "$2/.contend.lock")"; kill -9 ${BASHPID}' _ "$LIB" "$S"
+holder exit=137 ; state now: .contend.lock .contend.lock.owner.CTVrj5 
+stale lock is still a link (junction) naming dead pid 92635
+reclaimer pid 92682 acquired after 6s; pid file=92682
+reclaimer exit=0; state after release: []

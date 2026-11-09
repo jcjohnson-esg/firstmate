@@ -1,0 +1,5 @@
+== S4: state dir containing a cmd metacharacter (&): mklink must be skipped, strict symlink fallback must fail (no privilege) and never deep-copy
+try_create=failed after 1s
+lock absent (no copy)
+state entries: []
+exit=0

@@ -1,0 +1,4 @@
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - native Windows lock is a junction to its owner and releases cleanly
+ok - emulated Windows lock link skipped on a real Windows host (the native junction case covers it)
+exit=0

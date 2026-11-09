@@ -1,0 +1,10 @@
+== S5a FIXED bin/fm-lock.sh, lab home /c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.RjLTyq
+lock acquired: harness pid win:35404
+acquire exit=0 after 30s
+lock: held by live harness pid win:35404
+status exit=0
+state: [.lock .lock-session ]
+== S5b BASE (3e9c781d) bin/fm-lock.sh, lab home /c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.LzMfbz
+acquire exit=124 after 91s
+state: [.lock.acquire.owner.6G1xdn ]
+/c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.LzMfbz/state/.lock.acquire.owner.6G1xdn is PLAIN DIR (deep copy)

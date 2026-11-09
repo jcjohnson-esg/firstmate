@@ -1,0 +1,21 @@
+== host: MINGW64_NT-10.0-26200; MSYS=''; Developer Mode key: present
+== BASE commit 3e9c781d bin/fm-wake-lib.sh
+try_create=failed after 1s
+lock is PLAIN DIRECTORY (deep copy): pid pid-start 
+state entries: .contend.lock 
+exit=0
+== FIXED commit 1ecbd793 bin/fm-wake-lib.sh
+try_create=acquired after 2s
+lock is-link -> /c/Users/jcjohnson/AppData/Local/Temp/tmp.r0c6rvpu9y/fixed-state/.contend.lock.owner.vfjZYh
+state entries: .contend.lock .contend.lock.owner.vfjZYh 
+exit=0
+== PowerShell view of fixed lock
+Get-Item ~\AppData\Local\Temp\tmp.r0c6rvpu9y\fixed-state\.contend.lock
+LinkType=Junction
+Target=~\AppData\Local\Temp\tmp.r0c6rvpu9y\fixed-state\.contend.lock.owner.vfjZYh
+Reparse Tag Value : 0xa0000003
+Tag value: Microsoft
+Tag value: Name Surrogate
+
+AppModelUnlock AllowDevelopmentWithoutDevLicense=
+SeCreateSymbolicLinkPrivilege held: False
