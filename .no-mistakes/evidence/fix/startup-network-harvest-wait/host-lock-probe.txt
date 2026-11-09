@@ -1,0 +1,10 @@
+Host probe on this Windows 11 Git Bash PC (2026-11-08), against the worktree's unchanged bin/fm-wake-lib.sh:
+10 x /usr/bin/true launches: 1659 ms (~166 ms per process launch)
+ln -s dir (MSYS unset): creates a copy, [ -L ] false -> "NOT a symlink"
+MSYS=winsymlinks:nativestrict ln -s: "Operation not permitted" (no Developer Mode/admin)
+Uncontended fm_lock_acquire_wait_bounded <free lockdir> 20:
+  /tmp/lt1 rc=0 acquire=24640ms
+  /c/Users/jcjohnson/AppData/Local/Temp/lt2 rc=0 acquire=24854ms
+  /c/Users/JCJOHN~1/AppData/Local/Temp/lt3 rc=0 acquire=24422ms
+  (nativestrict) rc=124 acquire=28037ms
+Direct `fm-startup-network.sh run --locked 0` in a disposable FM_HOME: the first publish-lock take spent its whole 119s budget (fm_run_timed rc=124) before finding itself the owner; killed by timeout 150 at rc=124.

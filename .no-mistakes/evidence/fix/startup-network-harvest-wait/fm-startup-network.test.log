@@ -1,0 +1,7 @@
+ok - fm-startup-network: wait fails when no deferred stage publishes before its deadline
+not ok - start blocked for 137s behind a 10s worker
+
+real	5m13.264s
+user	0m47.823s
+sys	1m55.023s
+exit=1

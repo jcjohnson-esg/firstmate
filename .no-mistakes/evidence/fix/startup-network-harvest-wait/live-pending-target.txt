@@ -1,0 +1,4 @@
+== variant=target scenario=pending
+worker never published
+published at 17:28:40
+publish-lock held in 16 of 16 samples over 5s while claimant pending (worker 107195 alive: yes)
