@@ -1,0 +1,25 @@
+== [head-6dcc8479] $ FM_HOME=lab /c/Users/jcjohnson/.no-mistakes/worktrees/13c4a286458e/01M7AZRZEHKG42VZYFN1J08PT6/bin/fm-tool-update-check.sh arm
+armed: state/tool-updates.check.sh
+   arm exit=0
+   total 2
+   -rw-r--r-- 1 jcjohnson 1049089  84 Nov 13 11:58 tool-updates.check-trust
+   -rwxr-xr-x 1 jcjohnson 1049089 363 Nov 13 11:58 tool-updates.check.sh
+   watcher verdict for tool-updates shim: trusted
+== [head-6dcc8479] re-arm (shim_write fast path compares existing shim to mode 700)
+armed: state/tool-updates.check.sh
+   re-arm exit=0
+== [head-6dcc8479] guard A: bytes changed after registration
+registered: state/demo.check.sh
+   before tamper: trusted
+   after tamper (expect REJECTED): REJECTED
+== [head-6dcc8479] guard B: hard-linked check (link count 2) is refused
+   link count: 2
+error: custom check is unavailable
+   register exit=1 (expect 1)
+== [head-6dcc8479] guard C: probe cannot be created (state dir denies file creation) keeps strict
+   pre-registered ro while writable: trusted
+   icacls: denied add-file/add-subdir on state for jcjohnson
+   watcher verdict with unwritable state (expect REJECTED, probe cannot run): REJECTED
+   icacls: deny removed
+   watcher verdict after restoring write (expect trusted): trusted
+== [head-6dcc8479] leftover probe files: none

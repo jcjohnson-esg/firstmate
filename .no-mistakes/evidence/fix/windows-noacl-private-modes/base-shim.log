@@ -1,0 +1,8 @@
+== [base-427056c4] $ FM_HOME=lab /c/Users/JCJOHN~1/AppData/Local/Temp/fm-base.zrbcm3/bin/fm-tool-update-check.sh arm
+fm-tool-update-check: could not write /c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.qCHfAm/state/tool-updates.check.sh
+   arm exit=1
+   total 0
+   watcher verdict for tool-updates shim: REJECTED
+== [base-427056c4] re-arm (shim_write fast path compares existing shim to mode 700)
+fm-tool-update-check: could not write /c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.qCHfAm/state/tool-updates.check.sh
+   re-arm exit=1

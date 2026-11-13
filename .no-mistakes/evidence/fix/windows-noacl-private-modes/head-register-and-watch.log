@@ -1,0 +1,16 @@
+== [head-6dcc8479] code: /c/Users/jcjohnson/.no-mistakes/worktrees/13c4a286458e/01M7AZRZEHKG42VZYFN1J08PT6/bin
+== [head-6dcc8479] uname -s: MINGW64_NT-10.0-26200
+   mount: ~/AppData/Local/Temp on /tmp type ntfs (binary,noacl,posix=0,usertemp)
+   mount: C: on /c type ntfs (binary,noacl,posix=0,user,noumount,auto)
+== [head-6dcc8479] chmod 0700 demo.check.sh; stat reads back: 755
+== [head-6dcc8479] $ FM_HOME=lab fm-check-register.sh demo
+registered: state/demo.check.sh
+   register exit=0
+   total 2
+   -rw-r--r-- 1 jcjohnson 1049089 84 Nov 13 11:53 demo.check-trust
+   -rwxr-xr-x 1 jcjohnson 1049089 55 Nov 13 11:52 demo.check.sh
+   trust file mode as stat reads it: 644
+== [head-6dcc8479] watcher verdict (fm-watch.sh:4257 path)
+   fm_custom_check_registered: trusted
+   snapshot_prepare: ok; running snapshot -> demo-custom-check-fired
+== [head-6dcc8479] leftover probe/snapshot files in state: none

@@ -1,0 +1,14 @@
+== [base-427056c4] code: /c/Users/JCJOHN~1/AppData/Local/Temp/fm-base.zrbcm3/bin
+== [base-427056c4] uname -s: MINGW64_NT-10.0-26200
+   mount: ~/AppData/Local/Temp on /tmp type ntfs (binary,noacl,posix=0,usertemp)
+   mount: C: on /c type ntfs (binary,noacl,posix=0,user,noumount,auto)
+== [base-427056c4] chmod 0700 demo.check.sh; stat reads back: 755
+== [base-427056c4] $ FM_HOME=lab fm-check-register.sh demo
+error: custom check is unavailable
+   register exit=1
+   total 1
+   -rwxr-xr-x 1 jcjohnson 1049089 55 Nov 13 11:52 demo.check.sh
+== [base-427056c4] watcher verdict (fm-watch.sh:4257 path)
+   fm_custom_check_registered: REJECTED (unauthenticated)
+   snapshot_prepare: REJECTED -> watcher would wake: check: rejected unauthenticated state checks: /c/Users/JCJOHN~1/AppData/Local/Temp/fm-lab.qCHfAm/state/demo.check.sh
+== [base-427056c4] leftover probe/snapshot files in state: none

@@ -1,0 +1,3 @@
+dir /c/Users/jcjohnson/AppData/Local/Temp/fm-lab.qCHfAm/state/procevent-inbox (canonical long path): chmod 700 -> stat reads 755
+[base-427056c4] fm_procevent_private_directory_valid <dir> exact=1: INVALID
+[head-6dcc8479] fm_procevent_private_directory_valid <dir> exact=1: valid
