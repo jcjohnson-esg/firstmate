@@ -1,0 +1,23 @@
+### fm-lock.sh acquire from a Claude hook env (COLUMNS=80, CLAUDE_PID=34684 = claude.exe started Nov 8, CLAUDE_CODE_SESSION_ID set), lab FM_HOME
+--- base-427056c4 (no timeout wrapper) ---
+error: cannot identify this harness session on Windows: it publishes no session pid this build recognizes (see FM_WIN_HARNESS_PID_VARS in bin/fm-session-lock-lib.sh; CLAUDE_PID is taken only together with CLAUDE_CODE_SESSION_ID); operate read-only until resolved
+exit=1
+--- fix-0855248d (CLAUDE_PID=34684 COLUMNS='80', bash -x, 20s cap) ---
+exit=124
+resolved anchor: + me=win:34684
+passed write probe: yes
+claim-lock publish via ln -s attempts: 0; readlink results empty: 0
+--- control-base-COLUMNS-cleared-today-pid (CLAUDE_PID=23304 COLUMNS='', bash -x, 20s cap) ---
+exit=124
+resolved anchor: + me=win:23304
+passed write probe: yes
+claim-lock publish via ln -s attempts: 1; readlink results empty: 1
+
+### host symlink capability
+ln -s then readlink -> '' (rc=1); is symlink: no
+
+### fix-0855248d rerun with a 40s cap (the 20s cap ran out under bash -x before the claim step)
+exit=124; resolved anchor win:34684; claim-lock publish via ln -s attempts: 9, each followed by readlink -> '' (actual=)
+=> after the fix, acquisition gets past the "cannot identify this harness session" read-only refusal. It then stalls in the
+   pre-existing claim-lock symlink publish loop (bin/fm-wake-lib.sh). This host cannot create symlinks, and the control above
+   shows the same stall on the base commit, so the stall is independent of this change.

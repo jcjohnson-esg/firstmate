@@ -1,0 +1,16 @@
+### A. fm-lock.sh acquire, hook env COLUMNS=80, CLAUDE_PID=34684 (claude.exe started Nov 8), 20s cap
+base-427056c4: acquire exit=124 (timed out: anchor resolved, stuck in claim-lock symlink publish); claim-lock leftovers: 
+fix-0855248d: acquire exit=124 (timed out: anchor resolved, stuck in claim-lock symlink publish); claim-lock leftovers: .lock.acquire .lock.acquire.owner.9dxais 
+
+### B. Control: base lib with COLUMNS cleared and a today-started CLAUDE_PID=23304 reaches the same claim-lock stall (pre-existing, independent of this change)
+base acquire exit=124
+
+### C. Readers of a seeded state/.lock = win:34684 + sidecar, hook env COLUMNS=80
+--- base-427056c4 ---
+lock: stale (pid win:34684 dead or not a harness)
+{"schema":"fm-primary-ready.v1","home":"Temp/fm-lab.Kh22iG","observed_at":"2026-11-13T19:02:00Z","lock":{"state":"unknown","pid":null,"live_harness":false},"wake_consumer":{"state":"unknown","reason":"supervision-model-unknown-for-home","beacon_age_seconds":null},"posture":{"state":"present"},"can_receive":"unknown"}
+ready exit=0
+--- fix-0855248d ---
+lock: held by live harness pid win:34684
+{"schema":"fm-primary-ready.v1","home":"Temp/fm-lab.5rXpOA","observed_at":"2026-11-13T19:02:07Z","lock":{"state":"held","pid":null,"live_harness":true},"wake_consumer":{"state":"unknown","reason":"supervision-model-unknown-for-home","beacon_age_seconds":null},"posture":{"state":"present"},"can_receive":"unknown"}
+ready exit=0

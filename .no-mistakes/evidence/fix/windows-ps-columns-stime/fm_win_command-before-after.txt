@@ -1,0 +1,36 @@
+### Real Cygwin ps -W on MINGW64_NT-10.0-26200 2026-11-13 12:52:12; rows under COLUMNS=80 (as Claude's hook env sets):
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+  4228988       0       0      34684  ?              0   Nov  8 ~
+  4217608       0       0      23304  ?              0 12:50:20 ~
+### Same rows, COLUMNS cleared:
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+  4228988       0       0      34684  ?              0   Nov  8 ~\.local\bin\claude.exe
+  4217608       0       0      23304  ?              0 12:50:20 ~\.local\bin\claude.exe
+
+=== base-427056c4 lib, COLUMNS=80 ===
+fm_win_command 34684 -> rc=0 out=[8 ~]
+fm_win_command 23304 -> rc=0 out=[~]
+fm_win_command 999999 -> rc=1 out=[]
+fm_win_harness_ancestry_pids CLAUDE_PID=34684 -> rc=1 out=[]
+  verdict win:34684 -> readable
+  harness_pid_alive -> no
+  identity: win-pid=34684 command=8 ~
+fm_win_harness_ancestry_pids CLAUDE_PID=23304 -> rc=1 out=[]
+  verdict win:23304 -> readable
+  harness_pid_alive -> no
+  identity: win-pid=23304 command=~
+verdict win:999999 (absent pid) -> dead
+
+=== fix-0855248d lib, COLUMNS=80 ===
+fm_win_command 34684 -> rc=0 out=[~/.local/bin/claude]
+fm_win_command 23304 -> rc=0 out=[~/.local/bin/claude]
+fm_win_command 999999 -> rc=1 out=[]
+fm_win_harness_ancestry_pids CLAUDE_PID=34684 -> rc=0 out=[win:34684]
+  verdict win:34684 -> readable
+  harness_pid_alive -> yes
+  identity: win-pid=34684 command=~/.local/bin/claude
+fm_win_harness_ancestry_pids CLAUDE_PID=23304 -> rc=0 out=[win:23304]
+  verdict win:23304 -> readable
+  harness_pid_alive -> yes
+  identity: win-pid=23304 command=~/.local/bin/claude
+verdict win:999999 (absent pid) -> dead
